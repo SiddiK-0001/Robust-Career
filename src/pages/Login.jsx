@@ -10,18 +10,41 @@ import { FaEye } from "react-icons/fa";
 import { IoIosEyeOff } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const [success, setSuccess] = useState('')
+
     const [errorMessage, setError] = useState('')
     const [eye, setEye] = useState(false)
     const emailRefoo = useRef();
+    const navigate = useNavigate();
 
-    const { loginUser } = useContext(Authcontext)
+    const { loginUser,signInWithGoogle } = useContext(Authcontext)
 
     const handleEye = () => {
         setEye(!eye)
+    }
+
+    const handleGoogle =()=>{
+        return signInWithGoogle()
+        .then(result => {
+            // console.log(result.user)
+
+            toast.success('Successfully logged in', {
+                autoClose: 500
+            });
+
+           
+
+            setTimeout(() => {
+                navigate('/');
+            }, 1000);
+
+        })
+        .catch(error => {
+            setError(error.message)
+        })
+
     }
 
     const handlelogin = e => {
@@ -31,7 +54,7 @@ const Login = () => {
         const terms = e.target.terms.checked;
         // console.log(email,password)
 
-        setSuccess('');
+
         setError('');
 
         if (!terms) {
@@ -50,7 +73,16 @@ const Login = () => {
             .then(result => {
                 // console.log(result.user)
 
-                setSuccess('Successfully logged in ')
+                toast.success('Successfully logged in', {
+                    autoClose: 500
+                });
+
+                e.target.reset();
+
+                setTimeout(() => {
+                    navigate('/');
+                }, 1000);
+
             })
             .catch(error => {
                 setError(error.message)
@@ -79,29 +111,31 @@ const Login = () => {
     return (
 
         <div >
-            <ToastContainer />
+            <ToastContainer position='top-center' />
 
             <div
-                    style={{
-                        backgroundImage: "url('https://i.ibb.co/Ch60pPY/vecteezy-top-view-of-a-workspace-on-a-blue-desk-1309407.jpg')",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        height: "100vh",
-                        width: "100%",
-                        position: "relative",
-                        backgroundColor: "rgba(0, 0, 0, 0.9)",
-                        backgroundBlendMode: "overlay", 
-                    }}
-                >
-                    <div  className=' min-h-screen flex items-center justify-center w-3/4 mx-auto'>
+                style={{
+                    backgroundImage: "url('https://i.ibb.co/Ch60pPY/vecteezy-top-view-of-a-workspace-on-a-blue-desk-1309407.jpg')",
+                    backgroundSize: "cover",
 
-                    <div className="hero font-bold text-black">
+                    backgroundPosition: "center",
+                    minHeight: "100%",
+                    width: "100%",
+                    position: "relative",
+                    backgroundColor: "rgba(0, 0, 0, 0.9)",
+                    backgroundBlendMode: "overlay",
+                }}
+            >
+                <div className='min-h-screen flex   flex-col items-center justify-center' >
+
+
+                    <div className="hero flex items-center justify-center w-3/4 mx-auto   text-black">
                         <div className="hero-content flex-col lg:flex-row-reverse">
 
                             <div className="text-center lg:text-left">
                                 <h1 className="text-5xl font-bold text-white">Login now!</h1>
-                                <p className="py-6 text-white">
-                                For a <span className='text-[#FFD700] text-lg'>BETTER</span> user experience, please log in to your account. Logging in allows us to provide you with personalized recommendations, save your progress, and give you access to exclusive features tailored just for you.
+                                <p className="mt-6 text-white font-normal">
+                                    For a <span className='text-[#FFD700] text-lg'>BETTER</span> user experience, please log in to your account. Logging in allows us to provide you with personalized recommendations, save your progress, and give you access to exclusive features tailored just for you.
                                 </p>
                                 <p className='text-white text-3xl'>Don't have an Account? Please <NavLink to="/register" className='text-[#FFD700] text-4xl underline underline-offset-4'>Register</NavLink></p>
                             </div>
@@ -110,7 +144,7 @@ const Login = () => {
                                 <form onSubmit={handlelogin} className="card-body">
                                     <div className="form-control">
                                         <label className="label">
-                                            <span className="text-lg">Email</span>
+                                            <span className="text-lg font-bold ">Email</span>
                                         </label>
                                         <input type="email" ref={emailRefoo} name="email" placeholder="email" className="input input-bordered" required />
                                     </div>
@@ -118,11 +152,11 @@ const Login = () => {
 
                                     <div className="form-control relative">
                                         <label className="label">
-                                            <span className="text-lg">Password</span>
+                                            <span className="text-lg font-bold ">Password</span>
                                         </label>
                                         <input type={eye ? "text" : "password"} name="password" placeholder="password" className="input input-bordered" required />
 
-                                        <button onClick={handleEye} className="absolute right-3 top-14" type="button">
+                                        <button onClick={handleEye} className="absolute right-3 top-16" type="button">
                                             {
                                                 eye ? <FaEye /> : <IoIosEyeOff />
                                             }
@@ -130,34 +164,48 @@ const Login = () => {
 
 
                                         <label onClick={handleForget} className="label">
-                                            <a href="#" className="label-text-alt  link link-hover text-black">Forgot password?</a>
+                                            <a href="#" className="label-text-alt  link link-hover text-black font-bold ">Forgot password?</a>
                                         </label>
                                     </div>
 
 
                                     <div className="form-control">
                                         <label className="label gap-2 cursor-pointer">
-                                            <input type="checkbox" name="terms" className="checkbox border border-black" />
-                                            <span className="text-black text-lg">Accept our terms and conditions</span>
+                                            <input type="checkbox" name="terms" className="checkbox border border-black  " />
+                                            <span className="text-black text-lg font-bold ">Accept our terms and conditions</span>
                                         </label>
                                     </div>
 
                                     <div className="form-control mt-6">
                                         <button className="btn  bg-black text-yellow-300 border-none font-bold text-xl">Login</button>
                                     </div>
+
+                                    <div className="flex items-center justify-center my-4">
+                                        <div className="h-px bg-black flex-grow"></div>
+                                        <span className="px-3 text-xl ">Or</span>
+                                        <div className="h-px bg-black flex-grow"></div>
+                                    </div>
+
+
+                                    <button onClick={handleGoogle}>Log in With <span className='text-xl text-red-800 underline hover:text-red-950
+                                    '>GOOGLE</span></button>
+
+
                                 </form>
                                 {
-                                    errorMessage && <p className="text-red-600">{errorMessage}</p>
+                                    errorMessage && <p className="text-red-700 font-bold text-center">{errorMessage}</p>
                                 }
-                                {
-                                    success && <p className="text-green-600">{success}</p>
-                                }
+
                             </div>
                         </div>
                     </div>
 
-                    </div>
-                
+                    <p className='text-6xl text-white text-center font-bold '> Don't want to Login? Back to <NavLink to="/" className='text-[#FFD700] underline underline-offset-4'>Home</NavLink></p>
+
+
+                </div>
+
+
             </div>
 
         </div>

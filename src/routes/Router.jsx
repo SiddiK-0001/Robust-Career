@@ -4,29 +4,33 @@ import Error from "../Error/Error";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import About from "../pages/About";
-import Profile from "../pages/Profile";
-import HomeLayout from "../layout/HomeLayout";
+
+
 import Home from "../pages/Home";
+import AboutPage from "../pages/AboutPage";
+import ProfilePage from "../pages/ProfilePage";
 
 const Router = createBrowserRouter([
-    {
-        path:"/",
-        element:<HomeLayout></HomeLayout>,
-        children:[
+   
             {
                 path:"/",
                 element:<Home></Home>,
             },
             {
                 path:"/about",
-                element:<About></About>,
+                element:<AboutPage></AboutPage>,
+                children:[
+                    {
+                        path:"/about",
+                        element:<About></About>
+                    }
+                ]
             },
             {
                 path:"/profile",
-                element:<Profile></Profile>
+                element:<ProfilePage></ProfilePage>
             },
-        ],
-    },
+     
     
     {
         path:"/register",

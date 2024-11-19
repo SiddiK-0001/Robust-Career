@@ -36,13 +36,29 @@ const About = () => {
                 </div>
             </div>
 
+            <div
+                    style={{
+                        backgroundImage: "url('https://i.ibb.co/Ch60pPY/vecteezy-top-view-of-a-workspace-on-a-blue-desk-1309407.jpg')",
+                        backgroundSize: "cover",
+                        
+                        backgroundPosition: "center",
+                        minHeight: "100%",
+                        width: "100%",
+                        position: "relative",
+                        backgroundColor: "rgba(0, 0, 0, 0.9)",
+                        backgroundBlendMode: "overlay",
+                        padding: "5px",
+                        marginTop:"30px "
+                    }}
+                >
+
             {/* customer review */}
-            <p className="text-center font-bold text-black my-6 text-5xl">Customer Review </p>
+            <p className="text-center font-bold text-white mb-5 text-5xl">Customer Review </p>
 
 
 
 
-            <div className="bg-[#FFD700] shadow-lg border  rounded-2xl p-4 items-center flex gap-10 w-3/4 mx-auto mb-3 ">
+            <div className="bg-[#FFD700] shadow-lg   rounded-2xl p-4 items-center flex gap-10 w-3/4 mx-auto mb-3 ">
                 <div className="w-1/5 h-fit
         ">
                     <img className=" h-full rounded-2xl shadow-lg  w-full object-cover" src="https://i.ibb.co.com/yBpDSzS/Meet-Made-By-Morgen-The-Design-Files-Australia-s-most-popular-design-blog.jpg" alt="" />
@@ -53,7 +69,7 @@ const About = () => {
                     <p className="   text-lg text-black ">"I was lost and unsure about my career path, but this website provided me with personalized guidance that changed everything. The one-on-one counseling sessions were incredibly insightful, and the tools they offered helped me identify my strengths and opportunities.</p>
                 </div>
             </div>
-            <div className="bg-[#FFD700] shadow-lg border  rounded-2xl p-4 items-center flex gap-10 w-3/4 mx-auto mb-3  ">
+            <div className="bg-[#FFD700] shadow-lg   rounded-2xl p-4 items-center flex gap-10 w-3/4 mx-auto mb-3  ">
                 <div className="w-1/5 h-fit">
                     <img className="h-full rounded-2xl shadow-lg  w-full object-cover" src="https://i.ibb.co.com/JrnNqZp/Premium-Photo-Image-of-pleased-businessman-30s-wearing-suit-holding-money-fan-while-working-in-offic.jpg" alt="" />
                 </div>
@@ -63,7 +79,7 @@ const About = () => {
                     <p className="   text-lg text-black ">"As a mid-career professional, I was looking to switch industries but didn’t know where to start. The resources and career coaches here made the transition seamless. The mock interviews and resume-building services were particularly helpful. </p>
                 </div>
             </div>
-            <div className="bg-[#FFD700] shadow-lg border  rounded-2xl p-4 items-center flex gap-10 w-3/4 mx-auto mb-3  ">
+            <div className="bg-[#FFD700] shadow-lg   rounded-2xl p-4 items-center flex gap-10 w-3/4 mx-auto mb-3  ">
                 <div className="w-1/5 h-fit">
                     <img className="h-full rounded-2xl shadow-lg  w-full object-cover" src="https://i.ibb.co.com/tJJFpG7/Fifty-shades-of-grey-working-ceo-Christian.jpg" alt="" />
                 </div>
@@ -74,7 +90,7 @@ const About = () => {
                 </div>
             </div>
 
-
+            </div>
 
 
 

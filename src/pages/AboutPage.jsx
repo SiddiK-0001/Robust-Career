@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../component/Footer';
 import Banner from '../component/Banner';
 
-const Home= () => {
+const AboutPage= () => {
     return (
         <div className='flex flex-col min-h-screen'>
                <div
@@ -26,11 +26,11 @@ const Home= () => {
                <Banner
                 title=
                 {<>
-                    Building Your Future with <span className="text-[#FFD700] text-6xl">Confidence</span>
+                  "Empowering Careers, Enabling Futures"
                 </>}
                 subtitle=
                 {<>
-                    Unlock your full potential with <span className="text-[#FFD700]  text-lg">Robust Career</span>, the ultimate career counseling platform. Whether you're a student, a fresh graduate, or a professional exploring new horizons, we provide personalized guidance, expert advice, and powerful tools to help you navigate your career journey. Take the first step toward a brighter future today!
+                    "At Robust Career, our mission is to guide individuals on their journey to professional success. With <span className="text-[#FFD700] text-xl">personalized career counseling</span>, expert insights, and innovative tools, we are committed to helping you make informed decisions, achieve your goals, and unlock your true potential. Together, let's shape a brighter tomorrow."
                 </>}>
                 </Banner>
                </div>
@@ -52,4 +52,4 @@ const Home= () => {
     );
 };
 
-export default Home;
+export default AboutPage;
