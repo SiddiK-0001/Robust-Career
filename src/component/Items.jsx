@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Items = () => {
     const devices = useLoaderData()
@@ -53,10 +53,10 @@ const Items = () => {
                 <span className="font-semibold">Counselor:</span> {device.counselor}
             </p>
             <div className="mt-4">
-                <button 
+                <Link to={`/details/${device.id}`}
                     className="bg-yellow-500 text-black font-bold tracking-wide text-lg bold py-2 px-4 rounded hover:bg-yellow-800 transition-all">
                     Learn More
-                </button>
+                </Link>
             </div>
         </div>
     </div>

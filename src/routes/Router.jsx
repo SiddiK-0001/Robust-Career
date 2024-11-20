@@ -11,54 +11,60 @@ import AboutPage from "../pages/AboutPage";
 import ProfilePage from "../pages/ProfilePage";
 import ForgetPass from "../pages/ForgetPass";
 import Items from "../component/Items";
+import Details from "../pages/Details";
 
 const Router = createBrowserRouter([
-   
-            {
-                path:"/",
-                element:<Home></Home>,
-                children:[
-                    {
-                        path:"/",
-                        element:<Items></Items>,
-                        loader: ()=> fetch('../fake.json')
-                    }
-                ]
-            },
-            {
-                path:"/about",
-                element:<AboutPage></AboutPage>,
-                children:[
-                    {
-                        path:"/about",
-                        element:<About></About>
-                    }
-                ]
-            },
-            {
-                path:"/profile",
-                element:<ProfilePage></ProfilePage>
-            },
-     
-    
-    {
-        path:"/register",
-        element:<Register></Register>,
-    },
-    {
-        path:"/login",
-        element:<Login></Login>
-    },
-    {
-        path:"/forget",
-        element:<ForgetPass></ForgetPass>
-    },
-
 
     {
-        path: "*", 
-        element: <Error></Error>,
+        path: "/",
+        element: <Home></Home>,
+        children: [
+            {
+                path: "/",
+                element: <Items></Items>,
+                loader: () => fetch('../fake.json')
+            }
+        ]
+    },
+    {
+        path: "/about",
+        element: <AboutPage></AboutPage>,
+        children: [
+            {
+                path: "/about",
+                element: <About></About>
+            }
+        ]
+    },
+    {
+        path: '/details/:id',
+        element: <Details></Details>,
+        loader: () => fetch('../fake.json'),
       },
+    {
+        path: "/profile",
+        element: <ProfilePage></ProfilePage>
+    },
+
+
+    {
+        path: "/register",
+        element: <Register></Register>,
+    },
+    {
+        path: "/login",
+        element: <Login></Login>
+    },
+    {
+        path: "/forget",
+        element: <ForgetPass></ForgetPass>
+    },
+
+
+    {
+        path: "*",
+        element: <Error></Error>,
+    },
 ])
 
 export default Router;
