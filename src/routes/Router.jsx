@@ -9,12 +9,21 @@ import About from "../pages/About";
 import Home from "../pages/Home";
 import AboutPage from "../pages/AboutPage";
 import ProfilePage from "../pages/ProfilePage";
+import ForgetPass from "../pages/ForgetPass";
+import Items from "../component/Items";
 
 const Router = createBrowserRouter([
    
             {
                 path:"/",
                 element:<Home></Home>,
+                children:[
+                    {
+                        path:"/",
+                        element:<Items></Items>,
+                        loader: ()=> fetch('../fake.json')
+                    }
+                ]
             },
             {
                 path:"/about",
@@ -39,6 +48,10 @@ const Router = createBrowserRouter([
     {
         path:"/login",
         element:<Login></Login>
+    },
+    {
+        path:"/forget",
+        element:<ForgetPass></ForgetPass>
     },
 
 

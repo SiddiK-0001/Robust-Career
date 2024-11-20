@@ -3,7 +3,7 @@
 import React, { useContext } from 'react';
 import { Authcontext } from '../provider/Authprovider';
 
-import { sendPasswordResetEmail } from "firebase/auth";
+
 import { auth } from "../firebase";
 import { useRef, useState } from "react";
 import { FaEye } from "react-icons/fa";
@@ -12,14 +12,15 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 
+
 const Login = () => {
 
     const [errorMessage, setError] = useState('')
     const [eye, setEye] = useState(false)
-    const emailRefoo = useRef();
+    // const emailRefoo = useRef();
     const navigate = useNavigate();
 
-    const { loginUser,signInWithGoogle } = useContext(Authcontext)
+    const { loginUser,signInWithGoogle,setLoginEmail } = useContext(Authcontext)
 
     const handleEye = () => {
         setEye(!eye)
@@ -91,21 +92,17 @@ const Login = () => {
 
     }
 
-    const handleForget = () => {
-        // console.log(emailRefoo.current.value)
-        const email = emailRefoo.current.value;
-        if (!email) {
-            toast.error('Please provide a valid email')
-        }
-        else {
-            sendPasswordResetEmail(auth, email)
-                .then(() => {
-                    toast.success('Password reset email sent,check your email')
-                })
-        }
+    const handlePass=()=>{
+        const email = document.querySelector('input[name="email"]').value;
+        setLoginEmail(email);
 
+        
+        
 
+        setLoginEmail(email);
+        navigate("/forget");
     }
+
 
 
     return (
@@ -146,7 +143,7 @@ const Login = () => {
                                         <label className="label">
                                             <span className="text-lg font-bold ">Email</span>
                                         </label>
-                                        <input type="email" ref={emailRefoo} name="email" placeholder="email" className="input input-bordered" required />
+                                        <input type="email"  name="email" placeholder="email" className="input input-bordered" required />
                                     </div>
 
 
@@ -162,10 +159,13 @@ const Login = () => {
                                             }
                                         </button>
 
+                                     
 
-                                        <label onClick={handleForget} className="label">
-                                            <a href="#" className="label-text-alt  link link-hover text-black font-bold ">Forgot password?</a>
-                                        </label>
+
+                                        <button type='button' onClick={handlePass} className="label">
+                                            <span className="label-text-alt  link link-hover text-black font-bold ">Forgot password?</span>
+                                        </button >
+                                        
                                     </div>
 
 

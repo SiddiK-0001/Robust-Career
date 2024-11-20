@@ -174,9 +174,7 @@ const Register = () => {
                                                     eye ? <FaEye /> : <IoIosEyeOff />
                                                 }
                                             </button>
-                                            <label className="label">
-                                                <a href="#" className="label-text-alt link link-hover font-bold text-md">Forgot password?</a>
-                                            </label>
+                                            
                                         </div>
                                         <div className="form-control">
                                             <label className="label gap-2 cursor-pointer">
