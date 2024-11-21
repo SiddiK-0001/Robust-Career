@@ -10,10 +10,11 @@ import Home from "../pages/Home";
 import AboutPage from "../pages/AboutPage";
 import ProfilePage from "../pages/ProfilePage";
 import ForgetPass from "../pages/ForgetPass";
-import Items from "../component/Items";
+
 import Details from "../pages/Details";
 import PrivateRoute from "./PrivateRoute";
-import Swipe from "../component/Swipe";
+
+import PrivateRouteTwo from "./PrivateRouteTwo";
 
 const Router = createBrowserRouter([
 
@@ -32,7 +33,7 @@ const Router = createBrowserRouter([
     },
     {
         path: "/about",
-        element: <PrivateRoute><AboutPage></AboutPage></PrivateRoute>,
+        element: <PrivateRouteTwo><AboutPage></AboutPage></PrivateRouteTwo>,
         children: [
             {
                 path: "/about",
@@ -47,9 +48,9 @@ const Router = createBrowserRouter([
       },
     {
         path: "/profile",
-        element: <PrivateRoute>
+        element: <PrivateRouteTwo>
             <ProfilePage></ProfilePage>
-            </PrivateRoute>
+            </PrivateRouteTwo>
     },
 
 
