@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
-const Items = () => {
-    const devices = useLoaderData()
+const Items = ({data}) => {
+    
     return (
         <div>
             <div className='flex items-center justify-center gap-3'>
@@ -30,7 +30,7 @@ const Items = () => {
 
            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-5 p-6   w-fit mx-auto">
 
-           {devices.map((device) => (
+           {data.map((device) => (
     <div 
         key={device.id} 
         className="max-w-sm outline outline-offset-4 shadow-lg  bg-transparent border border-gray-200"

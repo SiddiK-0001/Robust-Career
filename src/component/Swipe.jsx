@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import './Swipe.css';
 import { useLoaderData } from 'react-router-dom';
 // import './Navbar.css'
-const Swipe = () => {
+const Swipe = ({data}) => {
     const details = useLoaderData()
     return (
         <div>
@@ -37,7 +37,7 @@ const Swipe = () => {
             >
 
                 {
-                    details.map(detail =>
+                    data.map(detail =>
                         <SwiperSlide key={detail.idx} className='flex flex-col text-black h-10 '>
                             <p>{detail.subtitle}</p>
                             <p className='text-2xl font-extrabold'>{detail.title}</p>

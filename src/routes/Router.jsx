@@ -20,19 +20,15 @@ const Router = createBrowserRouter([
     {
         path: "/",
         element: <Home></Home>,
-        children: [
-            {
-                path: "/",
-                element: <Swipe></Swipe>,
-                loader: () => fetch('../fakeTwo.json')
-                
-            },
-            {
-                path: "/",
-                element: <Items></Items>,
-                loader: () => fetch('../fake.json')
-            },
-        ]
+        loader: async () => {
+            const swipeResponse = await fetch('../fakeTwo.json');
+            const swipeData = await swipeResponse.json();
+      
+            const itemsResponse = await fetch('../fake.json');
+            const itemsData = await itemsResponse.json();
+      
+            return { swipeData, itemsData };
+          },
     },
     {
         path: "/about",

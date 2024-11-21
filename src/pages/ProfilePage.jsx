@@ -49,7 +49,7 @@ const ProfilePage = () => {
                     <Banner
                         title=
                         {<>
-                            Profile <span className="text-[#FFD700] text-6xl">Info</span>
+                            Profile <span className="text-[#FFD700] md:text-6xl">Info</span>
                         </>}
                         subtitle=
                         {<>
@@ -87,7 +87,7 @@ const ProfilePage = () => {
                         <p>Email: <span className=' md:text-3xl  font-normal'>{ currentUser?.email }</span></p>
 
                         {/* break all onk important when the items are overflowing from the parent div in small devices.jmn eikhane url div er baire chole jaitesilo. */}
-                        
+
                         <p>PhotoUrl: <span className=' md:text-2xl text-lg break-all font-normal'>{ currentUser?.photoURL}</span></p>
                     </div>
                 </div>
