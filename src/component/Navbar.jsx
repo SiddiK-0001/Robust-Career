@@ -81,14 +81,15 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ?
-                            <>
-                                <div className="mr-2 flex gap-2 btn h-10 btn-sm rounded-3xl bg-black shadow-lg border border-yellow-600">
+                            <div className="flex flex-col md:flex-row gap-2">
+                                <div className="mr-2 flex flex-col md:flex-row gap-2 btn h-10 btn-sm rounded-3xl bg-black shadow-lg border border-yellow-600">
                                     <img className="rounded-full w-7 h-7" src={user?.photoURL
                                     } alt="" />
                                     <p className="text-white text-lg">{user?.displayName}</p>
                                 </div>
                                 {/* <a className=" mr-2">{user?.email}</a> */}
-                                <button onClick={handleOut} className="btn bg-[#FFD700] text-lg border-none font-bold text-black">Sign out</button></>
+                                <button onClick={handleOut} className="btn bg-[#FFD700] text-lg border-none font-bold text-black rounded-3xl">Sign out</button>
+                                </div>
                             :
                             <NavLink className="btn border-none bg-[#FFD700] text-lg font-bold text-black" to='/login'>Log in</NavLink>
                     }

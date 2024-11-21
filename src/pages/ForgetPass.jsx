@@ -72,7 +72,7 @@ const ForgetPass = () => {
                 <div className='min-h-screen flex   flex-col items-center justify-center' >
 
 
-                    <div className="hero flex items-center justify-center w-3/4 mx-auto   text-black">
+                    <div className="hero flex items-center justify-center md:w-3/4 w-11/12 mx-auto   text-black">
                         <div className="hero-content flex-col lg:flex-row-reverse">
 
                             <div className="text-center lg:text-left">
@@ -106,7 +106,7 @@ const ForgetPass = () => {
                     </div>
 
 
-                    <p className='text-6xl text-white text-center font-bold '> Don't want to Reset Password? Back to <NavLink to="/login" className='text-[#FFD700] underline underline-offset-4'>Login</NavLink></p>
+                    <p className='md:text-6xl text-2xl text-white text-center font-bold '> Don't want to Reset Password? Back to <NavLink to="/login" className='text-[#FFD700] underline underline-offset-4'>Login</NavLink></p>
 
                 </div>
 

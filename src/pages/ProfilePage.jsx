@@ -73,24 +73,27 @@ const ProfilePage = () => {
                 }}
                 className=" flex flex-col mt-5"
             >
-            <div className='flex-grow w-3/4 mx-auto my-8'>
+            <div className='flex-grow md:w-3/4 w-11/12 mx-auto my-8'>
 
 
 
                 <div className='flex items-start gap-2 shadow-md border border-yellow-300 py-3 outline outline-offset-8 outline-black bg-[#ffd90058]'>
-                    <div>
-                    {currentUser?.photoURL && <img className='rounded-full w-28 shadow-lg border border-black' src={currentUser.photoURL} alt="" />}
+                    <div className='w-1/3'>
+                    {currentUser?.photoURL && <img className='rounded-full w-full shadow-lg border border-black object-cover' src={currentUser.photoURL} alt="" />}
                     </div>
 
-                    <div className='text-left text-4xl font-bold text-black'>
-                        <p>Name: <span className=' text-3xl font-normal'>{ currentUser?.displayName}</span></p>
-                        <p>Email: <span className=' text-3xl font-normal'>{ currentUser?.email }</span></p>
-                        <p>PhotoUrl: <span className=' text-2xl font-normal'>{ currentUser?.photoURL}</span></p>
+                    <div className='text-left md:text-4xl text-2xl font-bold text-black'>
+                        <p>Name: <span className=' md:text-3xl  font-normal'>{ currentUser?.displayName}</span></p>
+                        <p>Email: <span className=' md:text-3xl  font-normal'>{ currentUser?.email }</span></p>
+
+                        {/* break all onk important when the items are overflowing from the parent div in small devices.jmn eikhane url div er baire chole jaitesilo. */}
+                        
+                        <p>PhotoUrl: <span className=' md:text-2xl text-lg break-all font-normal'>{ currentUser?.photoURL}</span></p>
                     </div>
                 </div>
 
 
-                <div className="card bg-[#ffd900c5] w-1/2 shrink-0 shadow-2xl mt-9 mx-auto text-black outline outline-offset-8">
+                <div className="card bg-[#ffd900c5] md:w-1/2 w-11/12 shrink-0 shadow-2xl mt-9 mx-auto text-black outline outline-offset-8">
                                 <form onSubmit={handleUser}  className="card-body">
 
                                     <div className="form-control">

@@ -13,6 +13,7 @@ import ForgetPass from "../pages/ForgetPass";
 import Items from "../component/Items";
 import Details from "../pages/Details";
 import PrivateRoute from "./PrivateRoute";
+import Swipe from "../component/Swipe";
 
 const Router = createBrowserRouter([
 
@@ -22,9 +23,15 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: "/",
+                element: <Swipe></Swipe>,
+                loader: () => fetch('../fakeTwo.json')
+                
+            },
+            {
+                path: "/",
                 element: <Items></Items>,
                 loader: () => fetch('../fake.json')
-            }
+            },
         ]
     },
     {

@@ -118,7 +118,7 @@ const Register = () => {
                         backgroundBlendMode: "overlay", 
                     }}
                 >
-                    <div className=' min-h-screen flex items-center justify-center w-3/4 mx-auto'>
+                    <div className=' min-h-screen flex items-center justify-center md:w-3/4 w-11/12 mx-auto'>
 
                         <div className="hero ">
                             <div className="hero-content flex-col lg:flex-row-reverse text-black">

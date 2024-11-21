@@ -58,32 +58,32 @@ const About = () => {
 
 
 
-            <div className="bg-[#FFD700] shadow-lg   rounded-2xl p-4 items-center flex gap-10 w-3/4 mx-auto mb-3 ">
-                <div className="w-1/5 h-fit
+            <div className="bg-[#FFD700] shadow-lg   rounded-2xl p-4 items-center flex flex-col md:flex-row gap-10 w-3/4 mx-auto mb-3 ">
+                <div className="md:w-1/5 md:h-fit
         ">
-                    <img className=" h-full rounded-2xl shadow-lg  w-full object-cover" src="https://i.ibb.co.com/yBpDSzS/Meet-Made-By-Morgen-The-Design-Files-Australia-s-most-popular-design-blog.jpg" alt="" />
+                    <img className=" md:h-full rounded-2xl shadow-lg  w-full object-cover" src="https://i.ibb.co.com/yBpDSzS/Meet-Made-By-Morgen-The-Design-Files-Australia-s-most-popular-design-blog.jpg" alt="" />
                 </div>
-                <div className="w-4/5" >
+                <div className="md:w-4/5" >
                     <p className=" mt-3 text-4xl font-bold text-black ">John D. – ★★★★★</p>
                     <p className=" font-bold   text-lg text-black ">“Game-Changer for My Career!”</p>
                     <p className="   text-lg text-black ">"I was lost and unsure about my career path, but this website provided me with personalized guidance that changed everything. The one-on-one counseling sessions were incredibly insightful, and the tools they offered helped me identify my strengths and opportunities.</p>
                 </div>
             </div>
-            <div className="bg-[#FFD700] shadow-lg   rounded-2xl p-4 items-center flex gap-10 w-3/4 mx-auto mb-3  ">
-                <div className="w-1/5 h-fit">
-                    <img className="h-full rounded-2xl shadow-lg  w-full object-cover" src="https://i.ibb.co.com/JrnNqZp/Premium-Photo-Image-of-pleased-businessman-30s-wearing-suit-holding-money-fan-while-working-in-offic.jpg" alt="" />
+            <div className="bg-[#FFD700] shadow-lg   rounded-2xl p-4 items-center flex flex-col md:flex-row gap-10 w-3/4 mx-auto mb-3  ">
+                <div className="md:w-1/5 md:h-fit">
+                    <img className="md:h-full rounded-2xl shadow-lg  w-full object-cover" src="https://i.ibb.co.com/JrnNqZp/Premium-Photo-Image-of-pleased-businessman-30s-wearing-suit-holding-money-fan-while-working-in-offic.jpg" alt="" />
                 </div>
-                <div className="w-4/5" >
+                <div className="md:w-4/5" >
                     <p className=" mt-3 text-4xl font-bold text-black ">Samantha L. – ★★★★★</p>
                     <p className=" font-bold   text-lg text-black ">“Tailored Advice for Every Stage of Your Career”</p>
                     <p className="   text-lg text-black ">"As a mid-career professional, I was looking to switch industries but didn’t know where to start. The resources and career coaches here made the transition seamless. The mock interviews and resume-building services were particularly helpful. </p>
                 </div>
             </div>
-            <div className="bg-[#FFD700] shadow-lg   rounded-2xl p-4 items-center flex gap-10 w-3/4 mx-auto mb-3  ">
-                <div className="w-1/5 h-fit">
-                    <img className="h-full rounded-2xl shadow-lg  w-full object-cover" src="https://i.ibb.co.com/tJJFpG7/Fifty-shades-of-grey-working-ceo-Christian.jpg" alt="" />
+            <div className="bg-[#FFD700] shadow-lg   rounded-2xl p-4 items-center flex flex-col md:flex-row gap-10 w-3/4 mx-auto mb-3  ">
+                <div className="md:w-1/5 md:h-fit">
+                    <img className="md:h-full rounded-2xl shadow-lg  w-full object-cover" src="https://i.ibb.co.com/tJJFpG7/Fifty-shades-of-grey-working-ceo-Christian.jpg" alt="" />
                 </div>
-                <div className="w-4/5" >
+                <div className="md:w-4/5" >
                     <p className=" mt-3 text-4xl font-bold text-black ">Michael S. – ★★★★★</p>
                     <p className=" font-bold   text-lg text-black ">“Perfect for Students and Recent Graduates!”</p>
                     <p className="   text-lg text-black ">"Being a fresh graduate, I had no idea how to navigate the job market. The career assessment tests and expert advice gave me clarity and confidence.</p>
