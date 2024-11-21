@@ -69,7 +69,7 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                console.log(result.user)                         
+                // console.log(result.user)                         
 
                 const profile = {
                     displayName: name,
@@ -95,7 +95,7 @@ const Register = () => {
                 }, 1000);
             })
             .catch(error => {
-                console.log(error.message)
+                // console.log(error.message)
                 setError(' "Email already used" !! ');
             })
 

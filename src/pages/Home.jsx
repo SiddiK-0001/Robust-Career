@@ -8,6 +8,9 @@ import Items from '../component/Items';
 
 const Home = () => {
     const { swipeData, itemsData } = useLoaderData();
+    
+    
+
     return (
         <div className='flex flex-col min-h-screen'>
             <div

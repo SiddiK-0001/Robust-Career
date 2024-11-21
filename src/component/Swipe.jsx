@@ -37,8 +37,9 @@ const Swipe = ({data}) => {
             >
 
                 {
-                    data.map(detail =>
-                        <SwiperSlide key={detail.idx} className='flex flex-col text-black h-10 '>
+                    data.map((detail,idx) =>
+                        <SwiperSlide 
+                        key={idx} className='flex flex-col text-black h-10 '>
                             <p>{detail.subtitle}</p>
                             <p className='text-2xl font-extrabold'>{detail.title}</p>
                         </SwiperSlide>
