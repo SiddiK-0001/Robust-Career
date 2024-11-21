@@ -15,6 +15,8 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 
 const Details = () => {
+    const [feedBack, setFeedBack] = useState([])
+
     const { id } = useParams()
 
     const devices = useLoaderData()
@@ -33,6 +35,15 @@ const Details = () => {
     // "pricing": "$50 per session",
     // "duration": "05-12-24 5-6pm",
     // "counselor": "Dr. Emily Carter",
+
+    const handleComment = (e) => {
+        e.preventDefault();
+        const comment = e.target.comment.value;
+
+        setFeedBack([...feedBack, comment]);
+        e.target.reset();
+
+    }
 
 
 
@@ -62,7 +73,8 @@ const Details = () => {
             </div>
 
             <div className="flex-grow">
-                <div className="px-5 py-3 text-black rounded-3xl mx-auto w-1/2 -mt-16 bg-[#FFD700]  items-center flex flex-col md:flex-row gap-10 mb-36 shadow-lg outline outline-offset-8 outline-white">
+
+                <div className="px-5 py-3 text-black rounded-3xl mx-auto w-1/2 -mt-16 bg-[#FFD700]  items-center flex flex-col md:flex-row gap-10 mb-5 shadow-lg outline outline-offset-8 outline-white">
 
 
                     <img className="md:h-full md:w-56 h-56 w-full  object-cover rounded-xl " src={image} alt="" />
@@ -92,26 +104,26 @@ const Details = () => {
                         <div className="flex items-center">
 
                             {Array.from({ length: 5 }).map((_, index) => {
-                                
+
 
                                 if (index + 1 <= rating) {
-                                   
+
                                     return <AiFillStar key={index} className="text-white w-6 h-6" />;
                                 }
                                 else if (index < rating && rating < index + 1) {
-                                    
+
                                     return (
-                                    
-                                            <AiFillStar key={index} 
-                                                className="text-white w-6 h-6"
-                                                style={{ clipPath: "inset(0 50% 0 0)" }}
-                                            />
-                                           
-                                        
+
+                                        <AiFillStar key={index}
+                                            className="text-white w-6 h-6"
+                                            style={{ clipPath: "inset(0 50% 0 0)" }}
+                                        />
+
+
                                     );
                                 }
                                 else {
-                                    
+
                                     return <AiOutlineStar key={index} className="text-white w-6 h-6" />;
                                 }
                             }
@@ -122,6 +134,82 @@ const Details = () => {
                     </div>
 
                 </div>
+
+
+                <div
+                    style={{
+                        backgroundImage: "url('https://i.ibb.co/Ch60pPY/vecteezy-top-view-of-a-workspace-on-a-blue-desk-1309407.jpg')",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        width: "100%",
+                        backgroundColor: "rgba(0, 0, 0, 0.9)",
+                        backgroundBlendMode: "overlay",
+                    }}
+                >
+                    <div className='py-4 flex   flex-col items-center justify-center' >
+
+
+                        <h1 className="text-6xl font-bold text-white text-center">Do you have any Comments?</h1>
+                        <div className="hero flex items-center justify-center w-3/4 mx-auto   text-black">
+                            <div className="hero-content flex-col lg:flex-row gap-5">
+
+                                <div className="text-center lg:text-left">
+                                    <h1 className="text-3xl  text-white mb-2">Your comments will be shown here:</h1>
+
+                                    {feedBack.length > 0 ? (
+                                        <ul className="text-white font-semibold text-lg p-4  border-white border-4">
+                                            {feedBack.map((one, index) => (
+                                                <li key={index}><span>{index+1}. </span>{one}
+                                                <hr />
+                                                </li>
+                                                
+                                            ))}
+                                        </ul>
+                                    ) : (
+                                        <p className="text-white p-4  border-white border-4">No comments yet. Be the first to comment!</p>
+                                    )}
+
+                                </div>
+
+                                <div className="card bg-[#FFD700] w-full max-w-sm shrink-0 shadow-2xl">
+                                    <form onSubmit={handleComment} className="card-body">
+
+                                        <div className="form-control">
+                                            <label className="label">
+                                                <span className="text-xl font-bold ">Comments/Feedback</span>
+                                            </label>
+                                            <input type="text" name="comment" placeholder="comment" className="input input-bordered" required />
+                                        </div>
+
+                                        <div className="form-control mt-6" >
+
+                                            <button type="submit" className="btn  bg-black text-yellow-300 border-none font-bold text-xl">Submit</button>
+
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
             </div>
 
             <div>

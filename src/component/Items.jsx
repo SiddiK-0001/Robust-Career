@@ -33,7 +33,7 @@ const Items = () => {
            {devices.map((device) => (
     <div 
         key={device.id} 
-        className="max-w-sm outline outline-offset-4 shadow-lg  bg-white bg-transparent border border-gray-200"
+        className="max-w-sm outline outline-offset-4 shadow-lg  bg-transparent border border-gray-200"
     >
         <img 
             src={device.image} 

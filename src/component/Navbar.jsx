@@ -34,9 +34,14 @@ const Navbar = () => {
     const links =
         <>
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/profile">My Profile</NavLink>
+           {
+            user && 
+            <>
+             <NavLink to="/profile">My Profile</NavLink>
             <NavLink to="/about">About Us</NavLink>
 
+            </>
+           }
         </>
     return (
         <div className="text-white py-3 ">

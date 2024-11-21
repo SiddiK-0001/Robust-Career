@@ -12,6 +12,7 @@ import ProfilePage from "../pages/ProfilePage";
 import ForgetPass from "../pages/ForgetPass";
 import Items from "../component/Items";
 import Details from "../pages/Details";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
 
@@ -28,7 +29,7 @@ const Router = createBrowserRouter([
     },
     {
         path: "/about",
-        element: <AboutPage></AboutPage>,
+        element: <PrivateRoute><AboutPage></AboutPage></PrivateRoute>,
         children: [
             {
                 path: "/about",
@@ -38,12 +39,14 @@ const Router = createBrowserRouter([
     },
     {
         path: '/details/:id',
-        element: <Details></Details>,
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
         loader: () => fetch('../fake.json'),
       },
     {
         path: "/profile",
-        element: <ProfilePage></ProfilePage>
+        element: <PrivateRoute>
+            <ProfilePage></ProfilePage>
+            </PrivateRoute>
     },
 
 

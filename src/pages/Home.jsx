@@ -30,7 +30,8 @@ const Home= () => {
                 </>}
                 subtitle=
                 {<>
-                    Unlock your full potential with <span className="text-[#FFD700]  text-lg">Robust Career</span>, the ultimate career counseling platform. Whether you're a student, a fresh graduate, or a professional exploring new horizons, we provide personalized guidance, expert advice, and powerful tools to help you navigate your career journey. Take the first step toward a brighter future today!
+                    Unlock your full potential with <span className="text-[#FFD700]  text-lg">Robust Career</span>, the ultimate career counseling platform. Whether you're a student, a fresh graduate, or a professional exploring new horizons, we provide personalized guidance, expert advice, and powerful tools to help you navigate your career journey. Take the first step toward a brighter future today! <br/><br/>
+                    <span className='text-2xl font-bold '>Please Login to unlock all routes and features</span>
                 </>}>
                 </Banner>
                </div>
